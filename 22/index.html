@@ -5,58 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="hero-box">
-            <div class="brand">Premium Urban</div>
-            <div class="shoe-container">
-                <!-- <img src="./images/image.png" alt="Sneaker" class="main-shoe">  -->
-            </div>
-            <div class="text-footer">
-                <h1>Engineered for <br>the Concrete Jungle</h1>
-            </div>
+<div class="container">
+    <!-- khung bên trái  -->
+    <div class="left-panel">
+        <span class="brand-title">Premium Urban</span>
+        <!-- <img src="./images/image.png" alt="Sneaker" class="product-image">  -->
+        <div class="main-heading">
+            <h1>Engineered for <br>the Concrete Jungle</h1>
         </div>
-
-        <div class="form-box">
-            <div class="inner-form">
-                <h2>Create account</h2>
-                <p class="subtitle">Join the Premium Urban community today.</p>
-            </div>
-        </div>
-        <form>
-            <div class="row">
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <i><img src="./images/person.svg" alt=""></i>
-                        <input type="text" placeholder="First Name">
-                    </div>
-                </div>
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <i><img src="./images/person.svg" alt=""></i>
-                        <input type="text" placeholder="Last Name">
-                    </div>
-                </div>
-            </div>
-            <div class="input-group">
-                    <div class="input-wrapper">
-                        <i><img class="icons" src="./images/envelope.svg" alt=""></i>
-                        <input type="email" placeholder="Email Address">
-                    </div>
-            </div>
-            <div class="input-group">
-                    <div class="input-wrapper">
-                        <i><img class="icons" src="./images/lock.svg" alt=""></i>
-                        <input type="password" placeholder="Password">
-                    </div>
-            </div>
-            <button type="submit" class="submit-btn">Create Account</button>
-        </form>
-
-        <p class="login-redirect">Already have an account? <a href="#">Login</a></p>
     </div>
+    <!-- Khung bên phải  -->
+    <div class="right-panel">
+        <div class="form-header">
+            <h2>Create account</h2>
+            <p class="subtitle">Join the Premium Urban community today.</p>
+        </div>
+
+        <form>
+        <div class="register-form">
+            <div class="input-row">
+                <div class="input-group">
+                    <i><img src="./images/person.svg" alt=""></i>
+                    <input type="text" placeholder="First Name">
+                </div>
+                <div class="input-group">
+                    <i><img src="./images/person.svg" alt=""></i>
+                    <input type="text" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="input-group">
+                <i><img class="icons" src="./images/envelope.svg" alt=""></i>
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-group">
+                <i><img class="icons" src="./images/lock.svg" alt=""></i>
+                <input type="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn-submit">Create Account</button>
+        </form>
+        <div class="form-footer">
+            Already have an account? <a href="#">Login</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

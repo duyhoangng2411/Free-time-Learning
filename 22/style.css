@@ -1,154 +1,176 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800;800;900&display=swap'); */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-body{
-    background-color: #011b2c;
-    height: 100vh;
+
+body {
+    background-color: #0b090a; /* Nền tối bên ngoài trùng với góc bo */
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
-.container{
-    width: 1000px;
-    height: 600px;
+
+/* Khung lớn chứa toàn bộ giao diện */
+.container {
     display: flex;
-    background-color: white;
-    border-radius: 30px;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    border-radius: 40px; /* Bo góc lớn giống hình mẫu */
     overflow: hidden;
-    box-shadow: 0 50px 100px rgba(0,0,0,0.7);
 }
-.hero-box{
-    flex: 1;
-    background-color: #70a9c2;
-    padding: 50px;
+
+/* ---------------- LEFT PANEL ---------------- */
+.left-panel {
+    flex: 45%;
+    background-color: #8c6239; /* Màu nâu đất sáng bên trái */
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
 }
-.brand {
-    color: #fff;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-.shoe-container {
-    position: absolute;
 
-    top: 50%;
-
-    right: -120px;
-    
-    transform: translateY(-50%) rotate(25deg);
-    z-index: 10;
-}
-.main-shoe{
-    
-    width: 570px;
-    filter: drop-shadow(-20px -30px 50px rgba(0,0,0,0.8));
+.brand-title {
+    color: #f5f5f5;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
 }
 
-.form-box{
-    flex: 1.2;
-    padding: 60px 80px;
-    background: #02375c;
-    display: flex;
-    align-items: center;
+.product-image {
+    width: 110%; /* Hơi tràn nhẹ ra ngoài biên để tạo hiệu ứng 3D */
+    max-width: 450px;
+    align-self: center;
+    transform: rotate(-15deg); /* Xoay nhẹ chiếc giày giống ảnh mẫu */
+    margin-left: -20px;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5)); /* Đổ bóng cho giày */
 }
 
-.inner-form{
-    width: 100%;
-    color: #fff;
-}
-
-h2{
+.main-heading {
+    color: #110d0c;
     font-size: 2.2rem;
     font-weight: 800;
+    line-height: 1.2;
+}
+
+/* ---------------- RIGHT PANEL ---------------- */
+.right-panel {
+    flex: 55%;
+    background-color: #1a120b; /* Màu nâu đen đậm bên phải */
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 8px;
 }
-.subtitle{
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 50px;
-}
-.row{
-    display: flex;
-    gap: 40px;
-}
-.input-group{
+
+.form-header p {
+    color: #706255; /* Chữ mô tả màu nâu xám trầm */
+    font-size: 1rem;
     margin-bottom: 40px;
-    flex: 1;
-    position: relative;
 }
-.input-wrapper{
-    position: relative;
+
+/* Cấu trúc Form nhập liệu */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Khoảng cách giữa các hàng input */
+}
+
+.input-row {
+    display: flex;
+    gap: 30px;
+}
+
+.input-group {
+    flex: 1;
     display: flex;
     align-items: center;
-}   
-
-.input-wrapper i {
-    position: absolute;
-    left: 0;
-    bottom: 12px;
-    color: #02122c;
-    font-size: 0.9rem;
-    transition: 0.3s;
+    border-bottom: 1px solid #3d2f22; /* Đường gạch chân input */
+    padding-bottom: 8px;
+    position: relative;
 }
 
-.input-wrapper input {
+.input-group i {
+    color: #706255;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.input-group input {
     width: 100%;
-    padding: 10px 0 10px 30px;
     background: transparent;
     border: none;
-    border-bottom: 1px solid #011e31;
-    color: #fff;
-    font-size: 1rem;
     outline: none;
+    color: #ffffff;
+    font-size: 1.05rem;
 }
 
-.input-group::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #0b7fde;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.input-group:focus-within::after {
-    width: 100%;
-    left: 0;
+/* Màu chữ gợi ý (Placeholder) */
+.input-group input::placeholder {
+    color: #4a3b2c;
 }
 
-.input-group:focus-within .icons {
-    color: #8b5e3c;
-}
-.submit-btn{
-    width: 100%;
-    padding: 18px;
-    background: #405878;
+/* Nút bấm Create Account */
+.btn-submit {
+    background-color: #8c6239; /* Màu nền nút trùng màu panel trái */
+    color: #1a120b; /* Chữ màu tối */
     border: none;
+    padding: 16px;
     border-radius: 12px;
-    color: #fff;
+    font-size: 1.1rem;
     font-weight: 700;
-    font-size: 1rem;
     cursor: pointer;
     margin-top: 20px;
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(139, 94, 60, 0.2);
+    transition: background 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-.submit-btn:hover {
-    background: #41aef1;
-    transform: translateY(-2px);
-    box-shadow: 0 15px 25px rgba(139, 94, 60, 0.3);
+
+.btn-submit:hover {
+    background-color: #a1744a;
 }
-.login-redirect{
+
+/* Dòng chữ Login dưới cùng */
+.form-footer {
     text-align: center;
     margin-top: 30px;
-    font-size: 0.9rem;
-    color: #555;
+    color: #706255;
+    font-size: 0.95rem;
+}
+
+.form-footer a {
+    color: #8c6239;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Tối ưu responsive nhẹ cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .product-image {
+        width: 80%;
+        transform: none;
+        margin: 20px 0;
+    }
 }
