@@ -12,7 +12,9 @@
 --line: #CFC9B2;
 --danger: #A94A34;
 }
+
 *{box-sizing:border-box;}
+
 body{
 margin:0;
 background:
@@ -23,6 +25,7 @@ font-family:'Inter', sans-serif;
 min-height:100vh;
 padding:32px 16px 80px;
 }
+
 .sheet{
 max-width:640px;
 margin:0 auto;
@@ -33,6 +36,7 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 18px 40px -24px rgba(42,42,34
 position:relative;
 overflow:hidden;
 }
+
 .spine{
 position:absolute;
 left:0; top:0; bottom:0;
@@ -44,9 +48,11 @@ background:repeating-linear-gradient(
 );
 border-right:1px solid var(--line);
 }
+
 .content{
 padding: 30px 30px 30px 46px;
 }
+
 header{
 display:flex;
 justify-content:space-between;
@@ -55,7 +61,10 @@ gap:16px;
 padding-bottom:18px;
 border-bottom:1px solid var(--line);
 }
-.title-wrap{}
+
+.title-wrap{
+    background: transparent;
+}
 
 .eyebrow{
 font-family:'IBM Plex Mono', monospace;
