@@ -1,0 +1,323 @@
+:root{
+--paper: #EAE6D8;
+--paper-dark: #DDD7C4;
+--card: #F4F1E7;
+--ink: #2A2A22;
+--ink-soft: #6B6858;
+--ink-faint: #9C9885;
+--stamp-red: #A94A34;
+--stamp-red-dark: #8A3B29;
+--pine: #3D6B5E;
+--gold: #B8863F;
+--line: #CFC9B2;
+--danger: #A94A34;
+}
+*{box-sizing:border-box;}
+body{
+margin:0;
+background:
+    radial-gradient(1200px 600px at 15% -10%, #F1EDDF 0%, transparent 60%),
+    var(--paper);
+color:var(--ink);
+font-family:'Inter', sans-serif;
+min-height:100vh;
+padding:32px 16px 80px;
+}
+.sheet{
+max-width:640px;
+margin:0 auto;
+background:var(--card);
+border:1px solid var(--line);
+border-radius:4px;
+box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 18px 40px -24px rgba(42,42,34,0.35);
+position:relative;
+overflow:hidden;
+}
+.spine{
+position:absolute;
+left:0; top:0; bottom:0;
+width:14px;
+background:repeating-linear-gradient(
+    to bottom,
+    var(--paper-dark) 0px, var(--paper-dark) 3px,
+    transparent 3px, transparent 16px
+);
+border-right:1px solid var(--line);
+}
+.content{
+padding: 30px 30px 30px 46px;
+}
+header{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:16px;
+padding-bottom:18px;
+border-bottom:1px solid var(--line);
+}
+.title-wrap{}
+
+.eyebrow{
+font-family:'IBM Plex Mono', monospace;
+font-size:11px;
+letter-spacing:0.14em;
+color:var(--ink-faint);
+text-transform:uppercase;
+margin:0 0 4px;
+}
+h1{
+font-family:'Fraunces', serif;
+font-weight:700;
+font-size:30px;
+margin:0;
+letter-spacing:-0.01em;
+}
+.date-line{
+font-size:13px;
+color:var(--ink-soft);
+margin-top:6px;
+font-family:'IBM Plex Mono', monospace;
+text-transform:capitalize;
+}
+.streak-badge{
+flex-shrink:0;
+width:74px;
+height:74px;
+border:2px solid var(--stamp-red);
+border-radius:50%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:var(--stamp-red);
+transform:rotate(-6deg);
+position:relative;
+}
+.streak-badge::after{
+content:"";
+position:absolute;
+inset:5px;
+border:1px solid var(--stamp-red);
+border-radius:50%;
+opacity:0.5;
+}
+.streak-num{
+font-family:'Fraunces', serif;
+font-weight:700;
+font-size:26px;
+line-height:1;
+}
+.streak-label{
+font-family:'IBM Plex Mono', monospace;
+font-size:8.5px;
+letter-spacing:0.06em;
+text-transform:uppercase;
+margin-top:2px;
+}
+
+.progress-row{
+display:flex;
+align-items:center;
+gap:12px;
+margin:20px 0 8px;
+}
+.progress-track{
+flex:1;
+height:8px;
+background:var(--paper-dark);
+border-radius:4px;
+overflow:hidden;
+border:1px solid var(--line);
+}
+.progress-fill{
+height:100%;
+background:linear-gradient(90deg, var(--pine), var(--gold));
+width:0%;
+transition:width 0.4s ease;
+}
+.progress-text{
+font-family:'IBM Plex Mono', monospace;
+font-size:12px;
+color:var(--ink-soft);
+white-space:nowrap;
+}
+
+.add-form{
+display:flex;
+gap:8px;
+margin:22px 0 6px;
+flex-wrap:wrap;
+}
+.add-form input[type=text]{
+flex:1;
+min-width:140px;
+padding:10px 12px;
+border:1px solid var(--line);
+border-radius:3px;
+background:var(--paper);
+font-family:'Inter', sans-serif;
+font-size:14px;
+color:var(--ink);
+}
+.add-form input[type=text]:focus{
+outline:2px solid var(--pine);
+outline-offset:1px;
+}
+select#timeOfDay{
+padding:10px 10px;
+border:1px solid var(--line);
+border-radius:3px;
+background:var(--paper);
+font-family:'IBM Plex Mono', monospace;
+font-size:12px;
+color:var(--ink);
+}
+.add-btn{
+padding:10px 16px;
+background:var(--ink);
+color:var(--card);
+border:none;
+border-radius:3px;
+font-family:'Inter', sans-serif;
+font-weight:600;
+font-size:14px;
+cursor:pointer;
+}
+.add-btn:hover{ background:var(--stamp-red-dark); }
+.add-btn:focus-visible, select:focus-visible, .icon-btn:focus-visible, .stamp:focus-visible{
+outline:2px solid var(--pine);
+outline-offset:2px;
+}
+
+section.block{
+margin-top:26px;
+}
+.block-title{
+font-family:'IBM Plex Mono', monospace;
+font-size:11px;
+letter-spacing:0.14em;
+text-transform:uppercase;
+color:var(--ink-faint);
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+.block-title::after{
+content:"";
+flex:1;
+height:1px;
+background:var(--line);
+}
+
+.routine-row{
+display:flex;
+align-items:center;
+gap:14px;
+padding:11px 4px;
+border-bottom:1px dashed var(--line);
+}
+.routine-row:last-child{ border-bottom:none; }
+
+.stamp{
+width:34px;
+height:34px;
+flex-shrink:0;
+border-radius:50%;
+border:2px solid var(--ink-faint);
+background:transparent;
+cursor:pointer;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:transform 0.15s ease, border-color 0.15s ease;
+}
+.stamp svg{
+width:18px; height:18px;
+opacity:0;
+transition:opacity 0.15s ease;
+}
+.stamp.done{
+border-color:var(--stamp-red);
+background:rgba(169,74,52,0.08);
+}
+.stamp.done svg{ opacity:1; }
+.stamp.thump{ animation: thump 0.32s ease; }
+@keyframes thump{
+0%{ transform:scale(1) rotate(0deg); }
+35%{ transform:scale(0.82) rotate(var(--stamp-rot, -4deg)); }
+100%{ transform:scale(1) rotate(0deg); }
+}
+
+.routine-name{
+flex:1;
+font-size:15px;
+font-weight:500;
+min-width:0;
+word-break:break-word;
+}
+.routine-row.done .routine-name{
+color:var(--ink-soft);
+}
+
+.week-dots{
+display:flex;
+gap:4px;
+flex-shrink:0;
+}
+.week-dot{
+width:8px; height:8px;
+border-radius:50%;
+background:var(--paper-dark);
+border:1px solid var(--line);
+}
+.week-dot.filled{
+background:var(--pine);
+border-color:var(--pine);
+}
+.week-dot.today{
+box-shadow:0 0 0 2px rgba(58,58,45,0.15);
+}
+
+.icon-btn{
+background:none;
+border:none;
+color:var(--ink-faint);
+cursor:pointer;
+font-size:16px;
+padding:4px 6px;
+line-height:1;
+flex-shrink:0;
+}
+.icon-btn:hover{ color:var(--danger); }
+
+.empty-note{
+font-size:13px;
+color:var(--ink-faint);
+font-style:italic;
+padding:8px 4px;
+}
+
+footer{
+margin-top:30px;
+padding-top:14px;
+border-top:1px solid var(--line);
+font-family:'IBM Plex Mono', monospace;
+font-size:11px;
+color:var(--ink-faint);
+display:flex;
+justify-content:space-between;
+}
+
+@media (max-width:480px){
+.content{ padding:22px 18px 22px 32px; }
+h1{ font-size:24px; }
+.streak-badge{ width:60px; height:60px; }
+.streak-num{ font-size:20px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+.stamp.thump{ animation:none; }
+.progress-fill{ transition:none; }
+}

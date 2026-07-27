@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhật Trình — Thói Quen Mỗi Ngày</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sheet">
+        <div class="spine"></div>
+        <div class="content">
+            <header>
+                <div class="title-wrap">
+                <p class="eyebrow">Nhật trình cá nhân</p>
+                <h1>Thói Quen Mỗi Ngày</h1>
+                <p class="date-line" id="dateLine"></p>
+                </div>
+                <div class="streak-badge">
+                <span class="streak-num" id="streakNum">0</span>
+                <span class="streak-label">ngày liền</span>
+                </div>
+            </header>
+            <div class="progress-row">
+                <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+                <span class="progress-text" id="progressText">0/0</span>
+            </div>
+            <form class="add-form" id="addForm">
+                <input type="text" id="routineInput" placeholder="Thêm một việc muốn làm mỗi ngày…" maxlength="60" required>
+                <select id="timeOfDay">
+                <option value="sang">Sáng</option>
+                <option value="chieu">Chiều</option>
+                <option value="toi">Tối</option>
+                <option value="khac">Khác</option>
+                </select>
+                <button type="submit" class="add-btn">Thêm</button>
+            </form>
+            <div id="blocks"></div>
+            <footer>
+                <span id="footerLeft">—</span>
+                <span>lưu tự động</span>
+            </footer>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
