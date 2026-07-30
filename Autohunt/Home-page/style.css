@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Navbar-Holder {
+    width: 100%;
+    min-height: 629px;
+    display: flex;
+    justify-content: center;
+    background-image: url('./assets/Car.png');
+    background-size: cover;      /* phủ kín toàn bộ khung, không méo ảnh */
+    background-position: center; /* canh giữa ảnh */
+    background-repeat: no-repeat;
+}
+.Navbar {
+    display: flex;
+    width: 100%;
+    min-height: 54px;
+    justify-content: space-around;
+}
+.Navbar img {
+    width: 117.63px;
+    height: 32px;
+}
+.Navbar-Mid {
+    display: flex;
+    min-width: 564px;
+}
+.Navbar-Right {
+    display: flex;
+}
